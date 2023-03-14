@@ -457,7 +457,6 @@ router.get('/bio', function (req, res) {
   })
 })
 
-<<<<<<< HEAD
 router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
