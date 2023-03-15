@@ -543,7 +543,7 @@ router.get('/program', function (req, res) {
 router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
-    layout: 'basic'
+    layout: 'basic',
     web: {
       languages: [
         {
