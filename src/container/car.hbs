@@ -1,0 +1,222 @@
+<body>
+  <div class='container'>
+    <h1 class='display-1' >{{make}} {{model}}</h1>
+    <hr>
+    <br>
+    <p><b>Year: {{year}}</b></p>
+    <p><b>Color: {{color}}</b></p>
+
+    <h2>Features</h2>
+    <h3>Interior</h3>
+    <ul>
+      <li><span
+          class='badge rounded-pill text-bg-secondary'
+        >Seats:</span>
+        <ul>
+          <li>Material: {{features.interior.seats.material}}</li>
+          <li>Color: {{features.interior.seats.color}}</li>
+          <li>Heated:
+            {{#if features.interior.seats.heated}}Yes{{else}}No{{/if}}</li>
+          <li
+          >Ventilated:{{#if features.interior.seats.ventilated}}Yes{{else}}No{{/if}}</li>
+        </ul>
+      </li>
+      <li><span
+          class='badge rounded-pill text-bg-secondary'
+        >Dashboard:</span>
+        <ul>
+          <li>Material:
+            {{features.interior.dashboard.material}}</li>
+          <li>Color:
+            {{features.interior.dashboard.color}}</li>
+          <li>Display:
+            <details>
+              <ul>
+                <li>Type:
+                  {{features.interior.dashboard.display.type}}</li>
+                <li>Size:
+                  {{features.interior.dashboard.display.size}}</li>
+                <li>Resolution:
+                  {{features.interior.dashboard.display.resolution}}</li>
+                <li>Touchscreen:
+                  {{#if features.interior.dashboard.display.touchscreen}}Yes{{else}}No{{/if}}</li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </li>
+      <li><span
+          class='badge rounded-pill text-bg-secondary'
+        >Audio:</span>
+        <ul>
+          <li>System:
+            {{features.interior.audio.system}}</li>
+          <li
+          >Speakers:{{features.interior.audio.speakers}}</li>
+          <li
+          >Subwoofer:{{#if features.interior.audio.subwoofer}}Yes{{else}}No{{/if}}</li>
+          <li
+          >Bluetooth:{{#if features.interior.audio.bluetooth}}Yes{{else}}No{{/if}}</li>
+          <li>USB: {{#if features.interior.audio.USB}}Yes{{else}}No{{/if}}</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>Exterior</h3>
+    <ul>
+      <li><span
+          class='badge rounded-pill text-bg-secondary'
+        >Wheels:</span>
+        <ul>
+          <li>Size: {{features.exterior.wheels.size}}</li>
+          <li>Type: {{features.exterior.wheels.type}}</li>
+          <li>Color: {{features.exterior.wheels.color}}</li>
+        </ul>
+      </li>
+      <li><span
+          class='badge rounded-pill text-bg-secondary'
+        >Headlights:</span>
+        <ul>
+          <li>Type:
+            {{features.exterior.headlights.type}}</li>
+          <li
+          >Brightness:{{features.exterior.headlights.brightness}}</li>
+          <li
+          >Automatic:{{#if features.exterior.headlights.automatic}}Yes{{else}}No{{/if}}</li>
+        </ul>
+      </li>
+      <li><span
+          class='badge rounded-pill text-bg-secondary'
+        >Sunroof:</span>
+        <ul>
+          <li>Type: {{features.exterior.sunroof.type}}</li>
+          <li>Size: {{features.exterior.sunroof.size}}</li>
+          <li
+          >Automatic:{{#if features.exterior.sunroof.automatic}}Yes{{else}}No{{/if}}</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>Safety</h3>
+    <ul>
+      <li><span
+          class='badge rounded-pill text-bg-secondary'
+        >Airbags:</span>
+        <ul>
+          <li>Front: {{features.safety.airbags.front}}</li>
+          <li>Side: {{features.safety.airbags.side}}</li>
+          <li>Knee: {{features.safety.airbags.knee}}</li>
+          <li>Rear: {{features.safety.airbags.rear}}</li>
+        </ul>
+      </li>
+      <li><span
+          class='badge rounded-pill text-bg-secondary'
+        >Assistance:</span>
+        <ul>
+          <li>Blind Spot Monitoring:{{#if features.safety.assistance.blind_spot_monitoring}}Yes{{else}}No{{/if}} </li>
+          <li>Rear cross traffic alert:{{#if features.safety.assistance.rear_cross_traffic_alert}}Yes{{else}}No{{/if}}</li>
+          <li>Lane Departure Warning:{{#if features.safety.assistance.lane_departure_warning}}Yes{{else}}No{{/if}}</li>
+          <li>Adaptive Cruise Control:{{#if features.safety.assistance.adaptive_cruise_control}}Yes{{else}}No{{/if}}</li>
+          <li>Collision Warning:{{#if features.safety.assistance.collision_warning}}Yes{{else}}No{{/if}}</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>
+      <button
+        class='btn btn-secondary'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#collapseWidthExample'
+        aria-expanded='false'
+        aria-controls='collapseWidthExample'
+      >
+        <h2>Engine:</h2>
+      </button>
+    </p>
+    <div style='min-height: 120px;'>
+      <div
+        class='collapse collapse-horizontal'
+        id='collapseWidthExample'
+      >
+        <div class='card card-body' style='width: 300px;'>
+          <ul>
+            <li>
+              {{engine.type}},
+              {{engine.displacement}}
+              L,
+              {{engine.horsepower}}
+              h.p.,
+              {{engine.torque}}
+              Hm</li>
+            <li
+            >Transmission:{{engine.transmission.type}},{{engine.transmission.gears}}gears</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p>
+      <button
+        class='btn btn-secondary'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#collapseWidthExample'
+        aria-expanded='false'
+        aria-controls='collapseWidthExample'
+      >
+        <h2>Fuel_economy:</h2>
+      </button>
+    </p>
+    <div style='min-height: 120px;'>
+      <div
+        class='collapse collapse-horizontal'
+        id='collapseWidthExample'
+      >
+        <div class='card card-body' style='width: 300px;'>
+          <ul>
+      <li>City - {{fuel_economy.city}} ,</li> 
+      <li>Highway - {{fuel_economy.highway}} ,</li> 
+      <li>Combined - {{fuel_economy.combined}} r</li>
+      </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+    <p>
+      <button
+        class='btn btn-secondary'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#collapseWidthExample'
+        aria-expanded='false'
+        aria-controls='collapseWidthExample'
+      >
+        <h2>Price:</h2>
+      </button>
+    </p>
+    <div style='min-height: 120px;'>
+      <div
+        class='collapse collapse-horizontal'
+        id='collapseWidthExample'
+      >
+        <div class='card card-body' style='width: 300px;'>
+          <ul>
+      <li>Base:${{price.base}}</li>
+      <li>Destination:${{price.destination}}</li>
+      <li>Options:
+        <details>
+          <ul>
+            <li>Navigation: ${{price.options.navigation}}</li>
+            <li>Moonroof: ${{price.options.moonroof}}</li>
+            <li>Premium_paint: ${{price.options.premium_paint}}</li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
