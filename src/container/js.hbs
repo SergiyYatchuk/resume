@@ -1,0 +1,81 @@
+<html>
+  <head>
+  <body>
+    <div class='container'>
+      <h1 class='display-1' >{{name}}</h1>
+      <hr>
+      <br>
+      <p class='lead'>{{description}}</p>
+
+      <h2>History</h2>
+      <p>JavaScript was first introduced in
+        {{history.year}}
+        by
+        {{history.founder}}.</p>
+
+      <h2>Data Types</h2>
+      <ul
+        class='list-group list-group-horizontal'
+      >
+        {{#each types}}
+          <li
+            class='list-group-item'
+          >{{this}}</li>
+        {{/each}}
+      </ul>
+
+      <h2>Syntax</h2>
+      <ul class='list-group'>
+        {{#each syntax.variables}}
+          <li class='list-group-item list-group-item-primary'>{{this}}
+            - declaring variables</li>
+        {{/each}}
+        {{#each syntax.functions}}
+          <li class='list-group-item list-group-item-success'>{{this}}
+            - defining functions</li>
+        {{/each}}
+        {{#each syntax.conditionals}}
+          <li class='list-group-item list-group-item-warning'>{{this}}
+            - conditional statements</li>
+        {{/each}}
+        {{#each syntax.loops}}
+          <li class='list-group-item list-group-item-info'>{{this}} - loops</li>
+        {{/each}}
+        {{#each syntax.classes}}
+          <li class='list-group-item list-group-item-danger'>{{this}}
+            - defining classes</li>
+        {{/each}}
+      </ul>
+
+      <h2>Features</h2>
+      <ul class='list-group'>
+        {{#each features}}
+          <li class='list-group-item'>{{this}}</li>
+        {{/each}}
+      </ul>
+      <h2>Libraries</h2>
+      <ul class='btn-group'role="group" aria-label="Basic mixed styles example" >
+        {{#each libraries}}
+          <li button type ="button" class="btn btn-success">{{this}}</li>
+        {{/each}}
+      </ul>
+
+      <h2>Tools</h2>
+      <ul class='btn-group'role="group" aria-label="Basic mixed styles example">
+        {{#each tools}}
+          <li button type="button" class="btn btn-warning">{{this}}</li>
+        {{/each}}
+      </ul>
+
+      <h2>Community</h2>
+      <ul class='list-group'>
+        {{#each community}}
+          <li class='list-group-item'>{{name}}
+            -
+            {{type}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </body>
+
+</html>
