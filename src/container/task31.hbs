@@ -1,0 +1,176 @@
+<main>
+
+    {{#each navigation.links}}
+    <a href='{{this.href}}'>{{this.text}}</a>
+    {{/each}}
+    <a class="btn btn-primary" href='{{navigation.button.href}}' role='button'>{{navigation.button.text}}</a>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class='header'>
+        <h1>{{header.title}}</h1>
+        <p>{{header.description}}</p>
+        <a class="btn btn-primary" href='{{header.button.link}}' role='button'>{{header.button.text}}</a>
+
+        <br>
+        <hr>
+        <br>
+
+        <h2>{{city.title}}</h2>
+        <br>
+        <section class="row g-4">
+            {{#each city.cards}}
+            <div class='col-6'>
+                <div class="card">
+                    <img src='{{this.picture.src}}' alt='{{this.picture.alt}}' />
+                    <div class="card-body">
+                        <h3>{{this.title}}</h3>
+                        <p>{{this.description}}</p>
+                        <a class="btn btn-primary" href='{{this.button.href}}' role='button'>{{this.button.text}}</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </section>
+
+        <br>
+        <hr>
+        <br>
+
+        <h2>{{winner.title}}</h2>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    {{#each winner.table.head}}
+                    <th>{{this}}</th>
+                    {{/each}}
+                </tr>
+            </thead>
+            <tbody>
+                {{#each winner.table.user}}
+                <tr>
+                    <th>{{this.place}}</th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.surname}}</td>
+                    <td>{{this.nickname}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <br>
+        <hr>
+        <br>
+        <section>
+            {{#with gallery}}
+            <h2>{{title}}</h2>
+            <section class="col-12">
+                <div class="row g-2">
+                    {{#each cards}}
+                    <div class="col-4">
+                        <div class="card h-100">
+                            <div class="card-header">{{name}}</div>
+                        <ul class="list-group list-group-flush">
+                            {{#each items}}
+                            <li class="list-group-item">
+                                {{this}}
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </section>
+            {{/with}}
+        </section>
+        <br>
+        <hr>
+        <br>
+
+<div class="container">
+    <p class="display-3">{{relaxion.title}}</p>
+    <br>
+  <div class="row row-cols-2">
+    {{#each relaxion.cards}}
+    <div class="col mb-4">
+      <div class="card bg-secondary text-white">
+        <div class="card-header">{{this.header}}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="card-text">{{this.description}}</p>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+<br>
+<hr>
+<br>
+
+    <div class="container">
+  <div class="row">
+    {{#each rest.cards}}
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-header">{{this.header}}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="card-text">{{this.description}}</p>
+          <a href="#" class="btn btn-primary">{{this.button}}</a>
+        </div>
+        <div class="card-footer">{{this.footer}}</div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+<br>
+<hr>
+<br>
+
+<div class="container">
+    <p class="display-2">{{proposition.title}}</p>
+  <br>
+  <div class="row">
+    {{#each proposition.card}}
+    <div class="col-md-6 mb-4">
+      <div class="card text-white bg-warning">
+        <div class="card-header">{{this.header}}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="card-text">{{this.description}}</p>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+<hr>
+<br>
+<hr>
+{{#with footer}}
+<h5>{{title}}</h5>
+
+<div class="row">
+    <ul class="col-3 g-3 list-unstyled">
+        {{#each navigation}}
+         <div class="col-md-4 mb-2"> <li><a class="btn btn-link" href="{{href}}">{{text}}</a></li></div>
+        {{/each}}
+        </ul>
+    <ul class="col-3 g-3 list-unstyled">
+        {{#each socialMedia}}
+        <div class="col-md-4 mb-2"><li><a class="btn btn-outline-dark" href="{{link}}">{{name}}</a></li></div>
+        {{/each}}
+    </ul>
+    <ul class="col-3 g-3 list-unstyled">
+        {{#each partners}}
+        <div class="col-md-4 mb-2"><li><a class="btn btn-outline-primary" href="{{link}}">{{name}}</a></li></div>
+        {{/each}}
+    </ul>
+ </div>
+ {{/with}}
+</main>
