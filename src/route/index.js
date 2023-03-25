@@ -750,6 +750,7 @@ router.get('/web', function (req, res) {
     },
   })
 })
+
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
@@ -763,6 +764,7 @@ router.get('/bootstrap', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
+
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -773,6 +775,15 @@ router.get('/shopnews', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopnews', {
+
+//===================================================
+
+router.get('/shophome', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shophome', {
+
     layout: 'shop',
     navigation: {
       links: [
@@ -835,6 +846,32 @@ router.get('/shopnews', function (req, res) {
     newsOtherBlock: {
       title: 'See other news',
       cards: [
+    newsBlock: {
+      title: 'Latest News',
+      cards: [
+        {
+          title: 'COVID-19 Vaccinations Begin in Europe',
+          description:
+            'As the world continues to grapple with the ongoing COVID-19 pandemic, Europe begins its vaccination rollout, with healthcare workers and the elderly among the first to receive the vaccine.',
+          isTop: false,
+          idNew: false,
+        },
+        {
+          title: 'Tesla Stock Surges After Record Sales',
+          description:
+            "Tesla's stock price jumps 10% following the company's announcement of record sales in the last quarter, thanks in part to strong demand for its electric vehicles.",
+          isTop: true,
+          idNew: true,
+        },
+        {
+          title:
+            'New Study Shows Benefits of Meditation for Mental Health',
+          description:
+            'A new study published in the Journal of the American Medical Association finds that practicing mindfulness meditation can lead to improved mental health outcomes for people struggling with depression and anxiety.',
+          isTop: false,
+          idNew: false,
+        },
+
         {
           title: 'NASA Launches New Mars Rover',
           description:
@@ -852,6 +889,17 @@ router.get('/shopnews', function (req, res) {
         },
         {
           title:
+
+
+            'UK Announces Plan to Ban Sale of Gas-Powered Cars by 2030',
+          description:
+            'In an effort to combat climate change, the UK government announces a plan to ban the sale of new gas-powered cars and vans by 2030, with hybrid vehicles to follow in 2035.',
+          isTop: true,
+          idNew: false,
+        },
+        {
+          title:
+
             'New Study Shows Link Between Exercise and Longevity',
           description:
             'A new study published in the Journal of the American Medical Association suggests that regular exercise can help people live longer, with participants who exercised regularly having a lower risk of premature death.',
@@ -868,6 +916,100 @@ router.get('/shopnews', function (req, res) {
       ],
     },
 
+
+
+    goodsBlock: {
+      tabs: [
+        {
+          isActive: true,
+          isDisabled: false,
+          text: 'Electronics',
+        },
+        {
+          isActive: false,
+          isDisabled: false,
+          text: 'Home & Kitchen',
+        },
+        {
+          isActive: false,
+          isDisabled: false,
+          text: 'Clothing & Accessories',
+        },
+        {
+          isActive: false,
+          isDisabled: true,
+          text: 'Toys & Games',
+        },
+      ],
+      cards: [
+        {
+          image: 'https://www.google.com/',
+          title: 'iPhone 13',
+          description:
+            'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
+          isHot: false,
+          idNew: false,
+        },
+        {
+          image: 'https://www.google.com/',
+          title: 'MacBook Pro',
+          description:
+            "Apple's high-end laptop features a 16-inch Retina display, powerful M1 Pro or M1 Max chip, and up to 64GB of RAM.",
+          isHot: true,
+          idNew: false,
+        },
+        {
+          image: 'https://www.google.com/',
+          title: 'AirPods Pro',
+          description:
+            "Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.",
+          isHot: false,
+          idNew: false,
+        },
+        {
+          image: 'https://www.google.com/',
+          title: 'Sony Bravia XR A90J',
+          description:
+            'This OLED TV boasts a 4K resolution, HDR support, and a high refresh rate for smooth motion handling.',
+          isHot: false,
+          idNew: true,
+        },
+        {
+          image: 'https://www.google.com/',
+          title: 'Nintendo Switch OLED Model',
+          description:
+            'The latest iteration of the popular gaming console features a larger OLED screen and improved audio quality.',
+          isHot: false,
+          idNew: false,
+        },
+        {
+          image: 'https://www.google.com/',
+          title: 'Bose SoundLink Revolve+',
+          description:
+            'This portable Bluetooth speaker features 360-degree sound, water-resistant construction, and up to 16 hours of battery life.',
+          isHot: true,
+          idNew: true,
+        },
+      ],
+    },
+    subscribe: {
+      header: 'Unlock Premium Content',
+      description:
+        'Subscribe to access exclusive content and features.',
+      buttons: [
+        {
+          text: 'Register Now',
+          link: 'https://www.youtube.com/',
+          type: 'registration',
+        },
+        {
+          text: 'Buy Subscription',
+          link: 'https://www.youtube.com/',
+          type: 'subscription',
+        },
+      ],
+    },
+
     service: {
       title: 'Our Services',
       description:
@@ -876,6 +1018,688 @@ router.get('/shopnews', function (req, res) {
         {
           text: 'Show More',
           link: 'https://www.youtube.com/',
+
+
+          type: 'show-more',
+
+        },
+      ],
+    },
+
+    footer: [
+      [
+        {
+          text: 'Home',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
+        },
+        {
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
+        },
+      ],
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+        },
+      ],
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+
+
+router.get('/car', function (req, res) {
+  res.render('car', {
+    layout: 'basic',
+    make: 'Toyota',
+    model: 'Camry',
+    year: 2022,
+    color: 'silver',
+    features: {
+      interior: {
+        seats: {
+          material: 'leather',
+          color: 'black',
+          heated: true,
+          ventilated: true,
+        },
+        dashboard: {
+          material: 'plastic',
+          color: 'black',
+          display: {
+            type: 'LCD',
+            size: 10.1,
+            resolution: '1280x720',
+            touchscreen: true,
+          },
+        },
+        audio: {
+          system: 'JBL',
+          speakers: 8,
+          subwoofer: true,
+          bluetooth: true,
+          USB: true,
+        },
+      },
+      exterior: {
+        wheels: {
+          size: 18,
+          type: 'alloy',
+          color: 'silver',
+        },
+        headlights: {
+          type: 'LED',
+          brightness: 'high',
+          automatic: true,
+        },
+        sunroof: {
+          type: 'panoramic',
+          size: 'large',
+          automatic: true,
+        },
+      },
+      safety: {
+        airbags: {
+          front: 2,
+          side: 2,
+          knee: 2,
+          rear: 2,
+        },
+        assistance: {
+          blind_spot_monitoring: true,
+          rear_cross_traffic_alert: true,
+          lane_departure_warning: true,
+          adaptive_cruise_control: true,
+          collision_warning: true,
+        },
+      },
+    },
+    engine: {
+      type: 'gasoline',
+      displacement: 2.5,
+      horsepower: 206,
+      torque: 186,
+      transmission: {
+        type: 'automatic',
+        gears: 8,
+      },
+    },
+    fuel_economy: {
+      city: 28,
+      highway: 39,
+      combined: 32,
+    },
+    price: {
+      base: 25900,
+      destination: 995,
+      options: {
+        navigation: 1200,
+        moonroof: 800,
+        premium_paint: 595,
+      },
+      total: 28990,
+    },
+  })
+})
+
+router.get('/mac', function (req, res) {
+  res.render('mac', {
+    layout: 'basic',
+    name: 'Apple MacBook Pro',
+    description: 'The ultimate notebook for power users',
+    price: 1999.99,
+    category: 'Computers & Tablets',
+    features: {
+      processor: {
+        brand: 'Intel',
+        model: 'Core i9',
+        speed: '2.3 GHz',
+        cores: 8,
+        cache: '16 MB',
+      },
+      memory: {
+        type: 'DDR4',
+        size: '32 GB',
+        speed: '2666 MHz',
+      },
+      storage: {
+        type: 'SSD',
+        size: '1 TB',
+      },
+      display: {
+        size: '16 inches',
+        resolution: '3072x1920',
+        technology: 'Retina',
+        color_space: 'P3',
+        brightness: '500 nits',
+        refresh_rate: '60 Hz',
+      },
+      graphics: {
+        brand: 'AMD',
+        model: 'Radeon Pro 5500M',
+        memory: '4 GB GDDR6',
+      },
+      ports: [
+        {
+          type: 'Thunderbolt 3',
+          count: 4,
+          features: [
+            'Charging',
+            'DisplayPort',
+            'Thunderbolt (up to 40 Gbps)',
+            'USB 3.1 Gen 2 (up to 10 Gbps)',
+          ],
+        },
+        {
+          type: 'HDMI',
+          count: 1,
+        },
+      ],
+      battery: {
+        type: 'Lithium Polymer',
+        capacity: '100 Wh',
+        life: 'Up to 11 hours',
+      },
+      weight: '4.3 pounds',
+      dimensions: {
+        height: '0.64 inch',
+        width: '14.09 inches',
+        depth: '9.68 inches',
+      },
+      operating_system: 'macOS',
+      accessories: [
+        {
+          name: 'Apple Magic Keyboard',
+          price: 99.99,
+        },
+        {
+          name: 'Apple Magic Mouse 2',
+          price: 79.99,
+        },
+        {
+          name: 'USB-C to USB Adapter',
+          price: 19.99,
+        },
+      ],
+    },
+  })
+})
+
+//========================================================================================
+
+router.get('/js', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('js', {
+    layout: 'basic',
+    page: {
+      title: {
+        text: 'JavaScript',
+      },
+    },
+    name: 'JavaScript',
+    description:
+      'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
+    history: {
+      year: 1995,
+      founder: 'Brendan Eich',
+    },
+    types: [
+      'Number',
+      'String',
+      'Boolean',
+      'Null',
+      'Undefined',
+      'Symbol',
+      'Object',
+    ],
+    syntax: {
+      variables: ['var', 'let', 'const'],
+      functions: ['function'],
+      conditionals: ['if', 'else', 'switch'],
+      loops: ['for', 'while', 'do-while'],
+      classes: ['class'],
+    },
+    features: [
+      'First-class functions',
+      'Closures',
+      'Dynamic typing',
+      'Prototype-based inheritance',
+      'Asynchronous programming with Promises and async/await',
+      'Modules with import/export statements',
+    ],
+    libraries: [
+      'jQuery',
+      'React',
+      'Angular',
+      'Vue',
+      'Node.js',
+      'Express.js',
+      'Lodash',
+      'Moment.js',
+    ],
+    tools: [
+      'Babel',
+      'Webpack',
+      'ESLint',
+      'Jest',
+      'Mocha',
+      'Chai',
+      'Selenium',
+      'Cypress',
+    ],
+    community: [
+      {
+        name: 'Stack Overflow',
+        type: 'forum',
+      },
+      {
+        name: 'JavaScript Weekly',
+        type: 'newsletter',
+      },
+      {
+        name: 'The Changelog',
+        type: 'podcast',
+      },
+      {
+        name: 'CSS-Tricks',
+        type: 'blog',
+      },
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+//===============================================================================
+
+router.get('/facebook', function (req, res) {
+  res.render('facebook', {
+    layout: 'basic',
+    name: 'Facebook',
+    users: [
+      {
+        id: 1,
+        name: 'John Doe',
+        gender: 'Male',
+        age: 30,
+        friends: [
+          {
+            id: 2,
+            name: 'Jane Smith',
+            gender: 'Female',
+            age: 27,
+            mutual_friends: [
+              {
+                id: 4,
+                name: 'Samantha Lee',
+                gender: 'Female',
+                age: 25,
+              },
+            ],
+          },
+          {
+            id: 5,
+            name: 'Mike Williams',
+            gender: 'Male',
+            age: 28,
+            mutual_friends: [
+              {
+                id: 7,
+                name: 'David Kim',
+                gender: 'Male',
+                age: 29,
+              },
+            ],
+          },
+        ],
+        groups: [
+          {
+            id: 1,
+            name: 'Hiking Enthusiasts',
+            description:
+              'A group for people who love hiking and the great outdoors',
+            members: [
+              {
+                id: 8,
+                name: 'Sarah Johnson',
+                gender: 'Female',
+                age: 25,
+              },
+            ],
+          },
+          {
+            id: 2,
+            name: 'Foodies United',
+            description:
+              'A group for food lovers to share recipes and restaurant recommendations',
+            members: [
+              {
+                id: 5,
+                name: 'Mike Williams',
+                gender: 'Male',
+                age: 28,
+              },
+              {
+                id: 8,
+                name: 'Sarah Johnson',
+                gender: 'Female',
+                age: 25,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 16,
+        name: 'Amy Lee',
+        gender: 'Female',
+        age: 30,
+        friends: [
+          {
+            id: 15,
+            name: 'Peter Kim',
+            gender: 'Male',
+            age: 32,
+            mutual_friends: [
+              {
+                id: 17,
+                name: 'David Chen',
+                gender: 'Male',
+                age: 33,
+              },
+              {
+                id: 19,
+                name: 'Erica Wong',
+                gender: 'Female',
+                age: 29,
+                mutual_friends: [
+                  {
+                    id: 20,
+                    name: 'Alex Lee',
+                    gender: 'Male',
+                    age: 31,
+                  },
+                ],
+              },
+            ],
+            groups: [
+              {
+                id: 3,
+                name: 'Travel Addicts',
+                description:
+                  'A group for people who love to travel and explore new places',
+                members: [
+                  {
+                    id: 22,
+                    name: 'Jackie Chen',
+                    gender: 'Female',
+                    age: 26,
+                  },
+                ],
+              },
+              {
+                id: 4,
+                name: 'Pet Lovers',
+                description:
+                  'A group for people who love their furry friends',
+                members: [
+                  {
+                    id: 16,
+                    name: 'Amy Lee',
+                    gender: 'Female',
+                    age: 30,
+                  },
+                  {
+                    id: 25,
+                    name: 'John Smith',
+                    gender: 'Male',
+                    age: 33,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  })
+})
+
+// ================================================================
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/list', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('list', {
+    layout: 'basic',
+    list: [
+      { name: 'First' },
+      { name: 'Two' },
+      { name: 'Thirt' },
+      { name: 'Four' },
+    ],
+
+    user: {
+      name: {
+        value: 'Ivan',
+      },
+      role: {
+        value: 'Admin',
+      },
+      isConfirm: {
+        value: true,
+      },
+      age: {
+        value: 32,
+      },
+    },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+//=================================================================================
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/shopproduct', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shopproduct', {
+    layout: 'shop',
+
+    page: {
+      title: {
+        text: 'Shopproduct',
+      },
+    },
+
+    navigation: {
+      links: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
+        },
+      ],
+      Logo: 'Logo',
+    },
+
+    breadcrumb: [
+      { name: 'Home', url: 'https://github.com/' },
+      { name: 'PC', url: 'https://www.google.com/' },
+      { name: 'Windows', url: 'https://github.com/' },
+      { name: 'Product PC #3123', url: null },
+    ],
+
+    productData: {
+      img: 'https://picsum.photos/400/200',
+
+      info: {
+        title: 'Product PC Asus 331 BC 671',
+        about:
+          "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        price: '1000$',
+
+        category: [
+          { name: 'HOT', isHot: true },
+          { name: 'New', isNew: true },
+          { name: 'Bonus', isBonus: true },
+        ],
+      },
+
+      actionList: [
+        { name: 'Buy', isWarning: true },
+        { name: 'Add to cart', isError: true },
+        { name: 'Share', isSuccess: true },
+        { name: 'Like', isGood: true },
+      ],
+
+      item: {
+        head: ['#', 'color', 'price'],
+
+        body: [
+          ['id312', 'red', '1100$'],
+          ['id532', 'blue', '1050$'],
+          ['id643', 'dark', '999$'],
+        ],
+      },
+
+      param: {
+        title: 'Product params',
+        list: ['Экран 15.6', 'IPS (1920x1080)', 'Full HD'],
+      },
+
+      alert: {
+        isError: true,
+        text: 'Danger! This is a danger alert — check it out!',
+      },
+    },
+
+    goodsOtherBlock: {
+      title: 'See other products',
+      cards: [
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'iPhone 13',
+          description:
+            'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
+          isHot: false,
+          idNew: false,
+        },
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'MacBook Pro',
+          description:
+            "Apple's high-end laptop features a 16-inch Retina display, powerful M1 Pro or M1 Max chip, and up to 64GB of RAM.",
+          isHot: true,
+          idNew: false,
+        },
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'AirPods Pro',
+          description:
+            "Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.",
+          isHot: false,
+          idNew: false,
+        },
+      ],
+    },
+
+    service: {
+      title: 'Our Services',
+      description:
+        'We offer a variety of services to meet your needs, including web design, content creation, and social media management.',
+      buttons: [
+        {
+          text: 'Show More',
+          href: 'https://www.youtube.com/',
+          rel: 'show-more',
         },
       ],
     },
@@ -977,6 +1801,5 @@ router.get('/shopnews', function (req, res) {
 })
 
 // ================================================================
-
 // Підключаємо роутер до бек-енду
 module.exports = router
