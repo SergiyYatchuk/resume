@@ -1,0 +1,134 @@
+<html>
+
+  <body>
+    <div class='container'>
+      <h1>Welcome to
+        <button
+          type='button'
+          class='btn btn-primary btn-lg'
+        >{{name}}</button></h1>
+      <ul>
+        {{#each users}}
+          <li>
+            <h2>{{name}}</h2>
+            <hr />
+            <br />
+            <p><b>Gender: {{gender}}</b></p>
+            <p><b>ID: {{id}}</b></p>
+            <p><b>Age: {{age}}</b></p>
+            <h3>Friends:</h3>
+            <ul class='list-group list-group-horizontal'>
+              {{#each friends}}
+                <li
+                  class='list-group-item list-group-item-primary'
+                >
+                  <h5>{{name}}</h5>
+                  <p>Gender: {{gender}}</p>
+                  <p>ID: {{id}}</p>
+                  <p>Age: {{age}}</p>
+                  {{#if mutual_friends}}
+                    <h5>Mutual Friends:</h5>
+                    <ul
+                      class='list-group list-group-horizontal'
+                    >
+                      {{#each mutual_friends}}
+                        <li
+                          class='list-group-item list-group-item-warning'
+                        >
+                          <h6>{{name}}</h6>
+                          <p>Gender: {{gender}}</p>
+                          <p>ID: {{id}}</p>
+                          <p>Age: {{age}}</p>
+
+                          <ul
+                            class='list-group list-group-horizontal'
+                          >
+                            {{#each mutual_friends}}
+                              <li
+                                class='list-group-item list-group-item-action list-group-item-success'
+                              >
+                                <h6>{{name}}</h6>
+                                <p>Gender: {{gender}}</p>
+                                <p>ID: {{id}}</p>
+                                <p>Age: {{age}}</p>
+                              </li>
+                            {{/each}}
+                          </ul>
+                        </li>
+                      {{/each}}
+                    </ul>
+                  {{/if}}
+                  {{#if groups}}
+                    <h5>Groups:</h5>
+                    <ul
+                      class='list-group list-group-horizontal'
+                    >
+                      {{#each groups}}
+                        <li
+                          class='list-group-item list-group-item-action list-group-item-info'
+                        >
+                          <h6>{{name}}</h6>
+                          <p>ID: {{id}}</p>
+                          <p>{{description}}</p>
+                          {{#if members}}
+                            <h6>Members:</h6>
+                            <ul
+                              class='list-group list-group-horizontal'
+                            >
+                              {{#each members}}
+                                <li
+                                  class='list-group-item list-group-item-danger'
+                                >
+                                  <h6>{{name}}</h6>
+                                  <p>Gender: {{gender}}</p>
+                                  <p>ID: {{id}}</p>
+                                  <p>Age: {{age}}</p>
+                                </li>
+                              {{/each}}
+                            </ul>
+                          {{/if}}
+                        </li>
+                      {{/each}}
+                    </ul>
+                  {{/if}}
+                </li>
+              {{/each}}
+            </ul>
+            {{#if groups}}
+              <h3>Groups:</h3>
+              <ul class='list-group list-group-horizontal'>
+                {{#each groups}}
+                  <li
+                    class='list-group-item list-group-item-success'
+                  >
+                    <h4>{{name}}</h4>
+                    <p>ID: {{id}}</p>
+                    <p>{{description}}</p>
+                    {{#if members}}
+                      <h5>Members:</h5>
+                      <ul
+                        class='list-group list-group-horizontal'
+                      >
+                        {{#each members}}
+                          <li
+                            class='list-group-item list-group-item-danger'
+                          >
+                            <h6>{{name}}</h6>
+                            <p>Gender: {{gender}}</p>
+                            <p>ID: {{id}}</p>
+                            <p>Age: {{age}}</p>
+                          </li>
+                        {{/each}}
+                      </ul>
+                    {{/if}}
+                  </li>
+                {{/each}}
+              </ul>
+            {{/if}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </body>
+
+</html>
