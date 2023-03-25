@@ -764,6 +764,18 @@ router.get('/bootstrap', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/shopnews', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shopnews', {
+
 //===================================================
 
 router.get('/shophome', function (req, res) {
@@ -771,6 +783,7 @@ router.get('/shophome', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shophome', {
+
     layout: 'shop',
     navigation: {
       links: [
@@ -790,6 +803,49 @@ router.get('/shophome', function (req, res) {
       Logo: 'Logo',
     },
 
+    breadcrumb: [
+      { name: 'Home', url: 'https://github.com/' },
+      { name: 'News', url: 'https://www.google.com/' },
+      { name: 'Today', url: 'https://github.com/' },
+      { name: 'About cats', url: null },
+    ],
+
+    newsData: {
+      photo: 'https://picsum.photos/400/200',
+
+      head: {
+        heading: 'About cats',
+        description:
+          "Cats are adorable and beloved pets that have been domesticated for thousands of years. They are known for their independent and playful nature, as well as their agility and hunting skills. With their soft fur, purring, and cuddling, cats make great companions and can bring joy and relaxation to their owners. From domestic short-hairs to exotic breeds, cats come in many shapes, sizes, and colors, each with their own unique personalities. Whether they are napping in a sunny spot or chasing a toy, cats always bring a smile to their owner's faces.",
+      },
+
+      body: [
+        {
+          title: 'Cats have a keen sense of hearing',
+          text: 'With their highly sensitive ears, cats can detect sounds that are too faint for humans to hear, including the ultrasonic calls of rodents and other small prey.',
+        },
+        {
+          title: 'Cats are natural hunters',
+          text: 'Thanks to their sharp claws, quick reflexes, and stealthy movements, cats are excellent hunters. They can catch mice, rats, birds, and other prey with ease.',
+        },
+        {
+          title: 'Cats are independent creatures',
+          text: "Cats are known for their independent nature, and unlike dogs, they don't require constant attention and affection from their owners. They are perfectly content to entertain themselves with toys and explore their surroundings on their own.",
+        },
+        {
+          title: 'Cats have a unique way of communicating',
+          text: 'From meows and purrs to chirps and trills, cats use a variety of sounds to communicate with their owners and other cats. They also use body language, such as tail movements and ear positions, to convey their moods and intentions.',
+        },
+        {
+          title: 'Cats are good for your health',
+          text: 'Studies have shown that owning a cat can have numerous health benefits, including lower stress levels, reduced risk of heart disease and stroke, and improved mental health. Plus, cats make great companions and can provide a source of comfort and emotional support.',
+        },
+      ],
+    },
+
+    newsOtherBlock: {
+      title: 'See other news',
+      cards: [
     newsBlock: {
       title: 'Latest News',
       cards: [
@@ -815,6 +871,7 @@ router.get('/shophome', function (req, res) {
           isTop: false,
           idNew: false,
         },
+
         {
           title: 'NASA Launches New Mars Rover',
           description:
@@ -832,6 +889,8 @@ router.get('/shophome', function (req, res) {
         },
         {
           title:
+
+
             'UK Announces Plan to Ban Sale of Gas-Powered Cars by 2030',
           description:
             'In an effort to combat climate change, the UK government announces a plan to ban the sale of new gas-powered cars and vans by 2030, with hybrid vehicles to follow in 2035.',
@@ -840,6 +899,7 @@ router.get('/shophome', function (req, res) {
         },
         {
           title:
+
             'New Study Shows Link Between Exercise and Longevity',
           description:
             'A new study published in the Journal of the American Medical Association suggests that regular exercise can help people live longer, with participants who exercised regularly having a lower risk of premature death.',
@@ -855,6 +915,8 @@ router.get('/shophome', function (req, res) {
         },
       ],
     },
+
+
 
     goodsBlock: {
       tabs: [
@@ -947,6 +1009,7 @@ router.get('/shophome', function (req, res) {
         },
       ],
     },
+
     service: {
       title: 'Our Services',
       description:
@@ -955,7 +1018,10 @@ router.get('/shophome', function (req, res) {
         {
           text: 'Show More',
           link: 'https://www.youtube.com/',
+
+
           type: 'show-more',
+
         },
       ],
     },
@@ -1055,6 +1121,8 @@ router.get('/shophome', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
+
+
 
 router.get('/car', function (req, res) {
   res.render('car', {
@@ -1473,6 +1541,7 @@ router.get('/facebook', function (req, res) {
     ],
   })
 })
+
 // ================================================================
 
 //           ↙ тут вводимо шлях (PATH) до сторінки

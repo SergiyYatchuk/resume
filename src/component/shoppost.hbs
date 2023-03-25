@@ -1,3 +1,26 @@
+
+<div class='row gy-4 gx-2'>
+  {{#each cards}}
+    <div class='col-3'>
+      <div class='card text-bg-dark mb-3 h-100'>
+        <div class='card-header border-light'>
+          {{title}}
+
+          {{#if idNew}}
+            <span
+              class='badge rounded-pill text-bg-success mx-2'
+            >New</span>
+          {{/if}}
+
+          {{#if isTop}}
+            <span
+              class='badge rounded-pill text-bg-danger mx-2'
+            >Top</span>
+          {{/if}}
+        </div>
+        <div class='card-body h-100'>
+          <p class='card-text'>{{description}}</p>
+
 <div class='row'>
   {{#each cards}}
     <div class='col-3 mb-2 p-1'>
@@ -23,6 +46,7 @@
           <div class='card-body'>
             {{description}}
           </div>
+
         </div>
       </div>
     </div>
