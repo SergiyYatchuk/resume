@@ -759,7 +759,7 @@ router.get('/bootstrap', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('bootstrap', {
-    layout: 'basic',
+    layout: 'shop',
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
@@ -1141,9 +1141,6 @@ router.get('/car', function (req, res) {
   })
 })
 
-
-
-
 router.get('/mac', function (req, res) {
   res.render('mac', {
     layout: 'basic',
@@ -1224,9 +1221,22 @@ router.get('/mac', function (req, res) {
         },
       ],
     },
+  })
+})
+
 router.get('/js', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
   res.render('js', {
     layout: 'basic',
+
+    page: {
+      title: {
+        text: 'JavaScript',
+      },
+    },
+
     name: 'JavaScript',
     description:
       'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
@@ -1294,6 +1304,12 @@ router.get('/js', function (req, res) {
       {
         name: 'CSS-Tricks',
         type: 'blog',
+      },
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
 router.get('/facebook', function (req, res) {
   res.render('facebook', {
     layout: 'basic',
