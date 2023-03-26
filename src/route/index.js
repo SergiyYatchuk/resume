@@ -876,7 +876,7 @@ router.get('/shophome', function (req, res) {
       ],
       cards: [
         {
-          image: 'https://picsum.photos/400/200',
+          image: 'https://www.google.com/',
           title: 'iPhone 13',
           description:
             'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
@@ -884,7 +884,7 @@ router.get('/shophome', function (req, res) {
           idNew: false,
         },
         {
-          image: 'https://picsum.photos/400/200',
+          image: 'https://www.google.com/',
           title: 'MacBook Pro',
           description:
             "Apple's high-end laptop features a 16-inch Retina display, powerful M1 Pro or M1 Max chip, and up to 64GB of RAM.",
@@ -892,7 +892,7 @@ router.get('/shophome', function (req, res) {
           idNew: false,
         },
         {
-          image: 'https://picsum.photos/400/200',
+          image: 'https://www.google.com/',
           title: 'AirPods Pro',
           description:
             "Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.",
@@ -900,7 +900,7 @@ router.get('/shophome', function (req, res) {
           idNew: false,
         },
         {
-          image: 'https://picsum.photos/400/200',
+          image: 'https://www.google.com/',
           title: 'Sony Bravia XR A90J',
           description:
             'This OLED TV boasts a 4K resolution, HDR support, and a high refresh rate for smooth motion handling.',
@@ -908,7 +908,7 @@ router.get('/shophome', function (req, res) {
           idNew: true,
         },
         {
-          image: 'https://picsum.photos/400/200',
+          image: 'https://www.google.com/',
           title: 'Nintendo Switch OLED Model',
           description:
             'The latest iteration of the popular gaming console features a larger OLED screen and improved audio quality.',
@@ -916,7 +916,7 @@ router.get('/shophome', function (req, res) {
           idNew: false,
         },
         {
-          image: 'https://picsum.photos/400/200',
+          image: 'https://www.google.com/',
           title: 'Bose SoundLink Revolve+',
           description:
             'This portable Bluetooth speaker features 360-degree sound, water-resistant construction, and up to 16 hours of battery life.',
@@ -1045,7 +1045,10 @@ router.get('/shophome', function (req, res) {
       ],
     ],
   })
+  //                  ↑↑ сюди вводимо JSON дані
 })
+
+
 
 router.get('/car', function (req, res) {
   res.render('car', {
@@ -1221,22 +1224,9 @@ router.get('/mac', function (req, res) {
         },
       ],
     },
-  })
-})
-
 router.get('/js', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
   res.render('js', {
     layout: 'basic',
-
-    page: {
-      title: {
-        text: 'JavaScript',
-      },
-    },
-
     name: 'JavaScript',
     description:
       'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
@@ -1304,12 +1294,6 @@ router.get('/js', function (req, res) {
       {
         name: 'CSS-Tricks',
         type: 'blog',
-      },
-    ],
-  })
-  //                  ↑↑ сюди вводимо JSON дані
-})
-
 router.get('/facebook', function (req, res) {
   res.render('facebook', {
     layout: 'basic',
