@@ -764,7 +764,7 @@ router.get('/bootstrap', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('bootstrap', {
-    layout: 'shop',
+    layout: 'basic',
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
@@ -1113,7 +1113,7 @@ router.get('/shophome', function (req, res) {
       ],
       cards: [
         {
-          image: 'https://www.google.com/',
+          image: 'https://picsum.photos/400/200',
           title: 'iPhone 13',
           description:
             'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
@@ -1121,7 +1121,7 @@ router.get('/shophome', function (req, res) {
           idNew: false,
         },
         {
-          image: 'https://www.google.com/',
+          image: 'https://picsum.photos/400/200',
           title: 'MacBook Pro',
           description:
             "Apple's high-end laptop features a 16-inch Retina display, powerful M1 Pro or M1 Max chip, and up to 64GB of RAM.",
@@ -1129,7 +1129,7 @@ router.get('/shophome', function (req, res) {
           idNew: false,
         },
         {
-          image: 'https://www.google.com/',
+          image: 'https://picsum.photos/400/200',
           title: 'AirPods Pro',
           description:
             "Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.",
@@ -1137,7 +1137,7 @@ router.get('/shophome', function (req, res) {
           idNew: false,
         },
         {
-          image: 'https://www.google.com/',
+          image: 'https://picsum.photos/400/200',
           title: 'Sony Bravia XR A90J',
           description:
             'This OLED TV boasts a 4K resolution, HDR support, and a high refresh rate for smooth motion handling.',
@@ -1145,7 +1145,7 @@ router.get('/shophome', function (req, res) {
           idNew: true,
         },
         {
-          image: 'https://www.google.com/',
+          image: 'https://picsum.photos/400/200',
           title: 'Nintendo Switch OLED Model',
           description:
             'The latest iteration of the popular gaming console features a larger OLED screen and improved audio quality.',
@@ -1153,7 +1153,7 @@ router.get('/shophome', function (req, res) {
           idNew: false,
         },
         {
-          image: 'https://www.google.com/',
+          image: 'https://picsum.photos/400/200',
           title: 'Bose SoundLink Revolve+',
           description:
             'This portable Bluetooth speaker features 360-degree sound, water-resistant construction, and up to 16 hours of battery life.',
@@ -1285,6 +1285,8 @@ router.get('/shophome', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
+
+
 
 
 
@@ -1535,6 +1537,20 @@ router.get('/mac', function (req, res) {
     },
 
   })
+})
+
+router.get('/js', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('js', {
+    // ↙ сюди вводимо JSON дані
+
+    layout: 'js',
+
+    page: {
+      title: 'JS',
+      big: true,
+
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -1551,6 +1567,7 @@ router.get('/js', function (req, res) {
       title: {
         text: 'JavaScript',
       },
+
     },
 
     name: 'JavaScript',
@@ -1624,8 +1641,17 @@ router.get('/js', function (req, res) {
       },
     ],
   })
+})
+
+//================================================================
+
+
+      },
+    ],
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
+
 
 
 
@@ -2382,6 +2408,305 @@ router.get('/shopcart', function (req, res) {
           link: 'https://www.youtube.com/',
         },
       ],
+    },
+
+    footer: [
+      [
+        {
+          text: 'Home',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
+        },
+        {
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
+        },
+      ],
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+        },
+      ],
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/shopprofile', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shopprofile', {
+    layout: 'shop',
+    navigation: {
+      links: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
+        },
+      ],
+      Logo: 'Logo',
+    },
+
+    header: 'Мої замовлення',
+
+    purchase: {
+      tabs: ['Всі замовлення', 'Гарантія та повернення'],
+      actionBlock: {
+        input: { placeholder: 'Placeholder' },
+        buttons: [
+          {
+            text: 'Знайти',
+            link: 'https://www.youtube.com/',
+            isSuccess: true,
+          },
+          {
+            text: 'Виділити все',
+            link: 'https://www.youtube.com/',
+            isOutline: true,
+          },
+          {
+            text: 'Очистити все',
+            link: 'https://www.youtube.com/',
+            isDanger: true,
+          },
+        ],
+      },
+      itemList: [
+        {
+          number: '№12587463 від 01.01.2023',
+          status: 'Виконано',
+          amount: { title: 'Сума', value: '25 000 ₴' },
+          images: ['https://picsum.photos/110/100'],
+          button: {
+            text: 'Детальніше',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+        },
+        {
+          number: '№12587463 від 01.01.2023',
+          status: 'Виконано',
+          amount: { title: 'Сума', value: '25 000 ₴' },
+          images: [
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+          ],
+          button: {
+            text: 'Детальніше',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+        },
+        {
+          number: '№12587463 від 01.01.2023',
+          status: 'Виконано',
+          amount: { title: 'Сума', value: '25 000 ₴' },
+          images: [
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+          ],
+          button: {
+            text: 'Детальніше',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+        },
+      ],
+    },
+    userInfo: {
+      title: 'Особиста інформація',
+      profileData: {
+        title: 'Особисті дані',
+        fullName: {
+          surname: {
+            title: 'Прізвище',
+            value: 'Іванов',
+          },
+          name: {
+            title: 'Ім’я',
+            value: 'Іван',
+          },
+          middleName: {
+            title: 'По-батькові',
+            value: 'Іванович',
+          },
+        },
+        otherInfo: {
+          birthday: {
+            title: 'Дата народження',
+            value: '01.01.2000',
+          },
+          sex: {
+            title: 'Стать',
+            value: 'Чоловіча',
+          },
+          language: {
+            title: 'Мова',
+            value: 'Українська',
+          },
+        },
+      },
+      buttons: [
+        {
+          text: 'Редагувати',
+          link: 'https://www.youtube.com/',
+          isPrimary: true,
+        },
+        {
+          text: 'Очистити',
+          link: 'https://www.youtube.com/',
+          isSecondary: true,
+        },
+        {
+          text: 'Видалити',
+          link: 'https://www.youtube.com/',
+          isDanger: true,
+        },
+      ],
+      recipients: {
+        title: 'Отримувачі',
+        users: [
+          {
+            name: 'Іванов Іван Іванович',
+            phone: '+38 (098) 222 22 22',
+            button: {
+              text: 'Редагувати',
+              link: 'https://www.youtube.com/',
+            },
+          },
+          {
+            name: 'Петров Петро Петрович',
+            phone: '+38 (098) 111 11 11',
+            button: {
+              text: 'Редагувати',
+              link: 'https://www.youtube.com/',
+            },
+          },
+        ],
+      },
+      contacts: {
+        title: 'Контакти',
+        contactData: {
+          phone: {
+            title: 'Номер телефону',
+            value: '+38 (098) 222 22 22',
+          },
+          additionalPhone: {
+            title: 'Додатковий номер телефону',
+            value: '+38 (098) 111 11 11',
+          },
+          email: {
+            title: 'Електронна адреса',
+            value: 'ivanivanov@ukr.net',
+          },
+        },
+        buttons: [
+          {
+            text: 'Редагувати',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+          {
+            text: 'Очистити',
+            link: 'https://www.youtube.com/',
+            isSecondary: true,
+          },
+          {
+            text: 'Видалити',
+            link: 'https://www.youtube.com/',
+            isDanger: true,
+          },
+        ],
+      },
     },
 
     footer: [
