@@ -22,6 +22,13 @@
     
   </head>
 
+  <body class='m-3'>
+    {{> shop-header}}
+
+    {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   }}
+    {{{body}}}
+
+
 
   <body class='m-3'>
     {{> shop-header}}
@@ -55,8 +62,11 @@
     {{> shop-footer}}
   </body>
 
+</html>
+
 
 </html>
+
 
 
 
