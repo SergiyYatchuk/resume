@@ -1,0 +1,76 @@
+
+{{#with goodsOtherBlock}}
+  <div class='row my-5'>
+    <h2 class='text-center'>{{title}}</h2>
+  </div>
+  <div class='row'>
+    {{#each cards}}
+      <div class='col-4 mb-2 p-1'>
+        <div class='card-deck'>
+          <div class='card h-100'>
+
+            <img
+              class='card-img-top'
+              src='{{image}}'
+              alt='{{title}}'
+              style='height:100px; width=100%'
+            />
+            <div class='card-body'>
+
+              <div class='card-title'>
+                <strong>{{title}}</strong>
+                {{#if isHot}}
+                  <div
+                    class='badge rounded-pill text-uppercase text-bg-warning ms-2'
+                  >Hot!</div>
+                {{/if}}
+                {{#if idNew}}
+                  <div
+                    class='badge rounded-pill text-bg-primary ms-2'
+                  >New</div>
+                {{/if}}
+              </div>
+              {{description}}
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+{{/with}}
+
+<div class='row my-4 g-4'>
+  {{#each cards}}
+    <div class='col-4'>
+      <div class='card h-100'>
+        <img
+          src='{{image}}'
+          class='card-img-top'
+          alt='{{title}}'
+        />
+        <div class='card-body p-3 h-100'>
+          <div
+            class='d-flex align-items-center justify-content-start'
+          >
+            <h5 class='card-title'>{{title}}</h5>
+
+            {{#if isHot}}
+              <span
+                class='badge px-3 py-2 rounded-pill text-bg-warning text-light text-uppercase mx-2'
+              >hot</span>
+            {{/if}}
+
+            {{#if idNew}}
+              <span
+                class='badge px-3 py-2 rounded-pill text-bg-primary mx-2'
+              >New</span>
+            {{/if}}
+
+          </div>
+          <p class='card-text pt-2'>{{description}}</p>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+

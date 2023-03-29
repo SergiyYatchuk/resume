@@ -1,0 +1,108 @@
+<html>
+  <body>
+    <div class='container'>
+      <h1>{{name}}</h1>
+      <hr />
+      <p>{{description}}</p>
+      <hr />
+      <button type='button' class='btn btn-success'><h2
+        >Price: ${{price}}</h2></button>
+
+      <h2>Specifications</h2>
+      <ul class='list-group list-group-horizontal'>
+        <li
+          class='list-group-item list-group-item-warning'
+        ><b>Category:</b>
+          {{category}}</li>
+        <li
+          class='list-group-item list-group-item-warning'
+        ><b>Processor:</b>
+          {{features.processor.brand}}
+          {{features.processor.model}}
+          {{features.processor.speed}}
+          ({{features.processor.cores}}
+          cores,
+          {{features.processor.cache}}
+          cache)</li>
+        <li
+          class='list-group-item list-group-item-warning'
+        ><b>Memory:</b>
+          {{features.memory.size}}
+          {{features.memory.type}}
+          {{features.memory.speed}}</li>
+        <li
+          class='list-group-item list-group-item-warning'
+        ><b>Storage:</b>
+          {{features.storage.size}}
+          {{features.storage.type}}</li>
+        <li
+          class='list-group-item list-group-item-warning'
+        ><b>Display:</b>
+          {{features.display.size}}
+          {{features.display.technology}}
+          ({{features.display.resolution}},
+          {{features.display.color_space}},
+          {{features.display.brightness}},
+          {{features.display.refresh_rate}})</li>
+        <li
+          class='list-group-item list-group-item-warning'
+        ><b>Graphics:</b>
+          {{features.graphics.brand}}
+          {{features.graphics.model}}
+          {{features.graphics.memory}}</li>
+        <li
+          class='list-group-item list-group-item-warning'
+        ><b>Ports:</b>
+          <ul>
+            {{#each features.ports}}
+              <li>{{this.type}}
+                ({{this.count}}):
+                <ul>
+                  {{#each this.features}}
+                    <li>{{this}}</li>
+                  {{/each}}
+                </ul>
+              </li>
+            {{/each}}
+          </ul>
+        </li>
+        <li
+          class='list-group-item list-group-item-warning'
+        ><b>Battery:</b>
+          {{features.battery.type}}
+          {{features.battery.capacity}}
+          ({{features.battery.life}})</li>
+        <li
+          class='list-group-item list-group-item-warning'
+        ><b>Weight:</b>
+          {{features.weight}}</li>
+        <li
+          class='list-group-item list-group-item-warning'
+        ><b>Dimensions:</b>
+          {{features.dimensions.height}}
+          x
+          {{features.dimensions.width}}
+          x
+          {{features.dimensions.depth}}</li>
+        <li
+          class='list-group-item list-group-item-warning'
+        ><b>Operating System:</b>
+          {{features.operating_system}}</li>
+        <li
+          class='list-group-item list-group-item-warning'
+        ><b>Accessories:</b>
+          <ul>
+            {{#each features.accessories}}
+              <li>{{this.name}}
+                <button
+                  type='button'
+                  class='btn btn-success'
+                >${{this.price}}</button></li>
+            {{/each}}
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+
+</html>
