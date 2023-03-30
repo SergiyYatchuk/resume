@@ -1,154 +1,46 @@
-<html>
-
-<main class="p-5">
-
-  <body>
-    <div class="card mb-5">
-
-      <nav class="navbar navbar-expand-lg navbar-light  justify-content-between">
-        <a class="navbar-brand" href="#">
-          <h1>{{navigation.Logo}}</h1>
-        </a>
-
-        <div class='nav-item'>
-          <ul class="navbar-nav">
-            {{#each navigation.links}}
-            <li class="nav-item">
-              {{#if @first}}
-              <a class="nav-link" href="{{href}}">{{text}}</a>
-              {{else if @last}}
-              <a class="nav-link disabled" href="{{href}}">{{text}}</a>
-              {{else}}
-              <a class="nav-link" href="{{href}}">{{text}}</a>
-              {{/if}}
-            </li>
-            {{/each}}
-          </ul>
-        </div>
-    </div>
-    </nav>
-    </div>
-
-
-    <section class="mb-5">
-      {{#with newsBlock}}
-      <h4 class='text-center'>{{title}}</h4>
-      <div class='row g-2'>
-        {{#each cards}}
-        <div class='col-3'>
-          <div class='card h-100 text-bg-dark'>
-            <div class='card-header'>
-              {{title}}
-              {{#if isTop}}
-              <span class='badge text-bg-success text-capitalize'>new</span>
-              {{/if}}
-              {{#if idNew}}
-              <span class='badge text-bg-danger text-capitalize'>top</span>
-              {{/if}}
-            </div>
-            <div class='card-body'>{{description}}</div>
-          </div>
-        </div>
-        {{/each}}
-      </div>
-      {{/with}}
+<main>
+    <section class="py-5">
+        {{#with newsBlock}}
+            <h2 class="text-center mb-4">{{title}}</h2>
+            {{> shoppost}}
+        {{/with}}
     </section>
-
-    <hr class="mb-5">
-
-    <section class="mb-3">
-      {{#with goodsBlock}}
-      <div class='row g-2 mb-5'>
-        <ul class="nav nav-tabs">
-          {{#each tabs}}
-          <li class="nav-item">
-            <a class="nav-link {{#if this.isActive}}active{{/if}} {{#if this.isDisabled}}disabled{{/if}}"
-              href="#">{{this.text}}</a>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-      <div class="row">
-        {{#each cards}}
-        <div class="col-4 mb-5">
-          <div class='card h-100'>
-            <img src="{{image}}" alt="картинка">
-            <div class="card-header">
-              <h5>{{title}}</h5>
-              {{#if isHot}}
-              <span class="badge text-bg-warning text-uppercase">Hot!</span>
-              {{/if}}
-              {{#if idNew}}
-              <span class="badge text-bg-primary">Нове</span>
-              {{/if}}
-            </div>
-            <div class="card-body">{{description}}</div>
-
-          </div>
-        </div>
-        {{/each}}
-      </div>
-
-      {{/with}}
+    <hr>    
+    <section class="py-5">
+        {{#with goodsBlock}}
+            <ul class="nav nav-tabs mb-6">
+                {{#each tabs}}
+                    <li class="nav-item">
+                        <a class="nav-link {{#if isActive}}fw-semibold active{{/if}} {{#if isDisabled}}disabled{{/if}}" href="#">{{text}}</a>
+                    </li>
+                {{/each}}
+            </ul>
+            {{> shopcard}}            
+        {{/with}}
     </section>
-
-    <hr class="row mb-5">
-
-    <div class="card text-bg-dark">
-
-      <div class="card-header col-5">
-        <h2>{{subscribe.header}}</h2>
-        <p class="card-text">{{subscribe.description}}</p>
-      </div>
-
-      <div class="card-body text-end">
-        {{#each subscribe.buttons}}
-        <a href="{{this.link}}" class="btn btn-primary">{{this.text}}</a>
-        {{/each}}
-      </div>
-    </div>
-
-    <hr class="m-5">
-
-    <div class="card text-bg-success">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <h2>{{service.title}}</h2>
-          <p>{{service.description}}</p>
-          <a href="{{service.buttons.[0].link}}" class="btn btn-primary mb-2">{{service.buttons.[0].text}}</a>
-        </div>
-      </div>
-    </div>
-    <hr class="mt-5 mb-3">
-
-
-    <div class="container footer">
-      <div class="row">
-        {{#each footer}}
-        <div class="col-sm">
-          <ul class="list-unstyled">
-            {{#each this}}
-            {{#if @last}}
-            <li><a href="{{link}}" class="text-muted text-decoration-none" tabindex="-1">{{text}}</a></li>
-            {{else}}
-            <li><a href="{{link}}" class="text-decoration-none">{{text}}</a></li>
-            {{/if}}
-            {{/each}}
-          </ul>
-        </div>
-        {{/each}}
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-  </body>
+    <hr>    
+    <section class="py-5">
+        {{#with subscribe}}
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body text-bg-dark d-flex justify-content-between">
+                            <div>
+                                <h2>{{header}}</h2>
+                                <p>{{description}}</p>
+                            </div>
+                            <div class=" d-flex align-items-center">
+                                {{#each buttons}}
+                                    <span class="mx-1">{{> btn-prim}}</span>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/with}}
+    </section>
+    <hr>    
+    {{> shopaction}}
+    <hr>    
 </main>
-
-</html>
