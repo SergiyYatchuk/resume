@@ -1,6 +1,6 @@
-<nav>
-      {{> link text='Skills' href='/skills' line=true}}
-      {{> link text='Summary' href='/summary' line=true }}
-      {{> link text='Education' href='/education' line=true }}
-      {{> link text='Work' href='/work' line=true noLine=true }}
-    </nav>
+<nav class="nav nav-pills">
+  <a class="nav-link{{#if activeSkills}} active{{/if}}" href="/skills">Skills</a>
+  <a class="nav-link{{#if activeSummary}} active{{/if}}" href="/summary">Summary</a>
+  <a class="nav-link{{#if activeEducation}} active{{/if}}" href="/education">Education</a>
+  <a class="nav-link{{#if activeWork}} active{{/if}}" href="/work">Work</a>
+</nav>

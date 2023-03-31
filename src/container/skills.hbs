@@ -3,43 +3,43 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 }}
 
-<div>
+<div class="container">
   {{#with main}}
     <main>
       {{> title big=true data='All skills'}}
       <section>
-        <ul>
+        <ul class="list-group">
           {{#each skills}}
-            <li>
+            <li class="list-group-item">
               {{name}}
+          {{#if point includeZero=true}} ({{point}}) {{/if}}
+          {{#if isTop}} (top) {{/if}}
 
-              {{#if point includeZero=true}} ({{point}}) {{/if}}
-              {{#if isTop}} (top) {{/if}}
+          {{#unless point includeZero=true}} (не вивчаємо) {{/unless}}
 
-              {{#unless point includeZero=true}} (не вивчаємо) {{/unless}}
+          {{#unless point}} 
+          {{#if point includeZero=true }}
+          (зараз вивчаємо) 
+          {{/if}}
+          {{/unless}}
+        </li>
+      {{/each}}  
+    </ul>
+  </section>
 
-              {{#unless point}} 
-              {{#if point includeZero=true }}
-              (зараз вивчаємо) 
-              {{/if}}
-              {{/unless}}
-            </li>
-          {{/each}}  
-        </ul>
-      </section>
+  {{> title big=false data='My hobbies'}}
+  <section>
+    <ol class="list-group">
+      {{#each hobbies}}
+        <li class="list-group-item">
+           {{name}} {{#if isMain}} (favorite) {{/if}}
+        </li>
+      {{/each}}
+    </ol>
+  </section>
+</main>
+{{/with}}
 
-      {{> title big=false data='My hobbies'}}
-      <section>
-        <ol>
-          {{#each hobbies}}
-            <li>
-               {{name}} {{#if isMain}} (favorite) {{/if}}
-            </li>
-          {{/each}}
-        </ol>
-      </section>
-    </main>
-  {{/with}}
 </div>
 
 {{!-- 

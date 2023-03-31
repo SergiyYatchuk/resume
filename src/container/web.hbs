@@ -1,17 +1,16 @@
 <html>
-
   <body>
-    <div class='web-container'>
-      <h1>Web Development</h1>
+    <div class='container'>
+      <h1 class='text-center'>Web Development</h1>
       {{#each web.languages}}
         <div class='language'>
           <h2>{{this.name}} ({{this.version}})</h2>
           <p>{{this.description}}</p>
           {{#if this.elements}}
             <h3>Elements:</h3>
-            <ul>
+            <ul class='list-group'>
               {{#each this.elements}}
-                <li>
+                <li class='list-group-item'>
                   <strong>{{this.name}}</strong>:
                   {{this.description}}
                   <ul>
@@ -26,9 +25,9 @@
           {{/if}}
           {{#if this.properties}}
             <h3>Properties:</h3>
-            <ul>
+            <ul class='list-group'>
               {{#each this.properties}}
-                <li>
+                <li class='list-group-item'>
                   <strong>{{this.name}}</strong>:
                   {{this.description}}
                   <ul>
@@ -43,9 +42,9 @@
           {{/if}}
           {{#if this.functions}}
             <h3>Functions:</h3>
-            <ul>
+            <ul class='list-group'>
               {{#each this.functions}}
-                <li>
+                <li class='list-group-item'>
                   <strong>{{this.name}}</strong>:
                   {{this.description}}
                   <ul>
@@ -63,5 +62,4 @@
       {{/each}}
     </div>
   </body>
-
 </html>

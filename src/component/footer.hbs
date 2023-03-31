@@ -1,18 +1,38 @@
 <footer>
-  <hr class="my-5">
-    <div>
-      {{#with social}}
-        {{> link text=email.text href=email.href blank=true }}
-        {{> link text=phone.text href=phone.href blank=true }}
-        {{> link text=LinkedIn.text href=LinkedIn.href blank=true noLine=true }}   
-      {{/with}}
-    </div>
-    
-    <div class="my-3">
-      <em>Copyright by {{firstname}} {{lastname}}</em>
-    </div>
-    
-    <div>
-      <address> {{address}} </address>
-    </div>
-  </footer>
+  <div class='m-5'>
+    {{#with social}}
+      <div
+        class='btn-group'
+        role='group'
+        aria-label='Contact buttons'
+      >
+        <a
+          href='{{email.href}}'
+          class='btn btn-primary'
+          target='_blank'
+          rel='noopener noreferrer'
+        >{{email.text}}</a>
+        <a
+          href='{{phone.href}}'
+          class='btn btn-primary'
+          target='_blank'
+          rel='noopener noreferrer'
+        >{{phone.text}}</a>
+        <a
+          href='{{LinkedIn.href}}'
+          class='btn btn-primary'
+          target='_blank'
+          rel='noopener noreferrer'
+        >{{LinkedIn.text}}</a>
+      </div>
+    {{/with}}
+  </div>
+
+  <div class='m-5'>
+    <em>Copyright by {{firstname}} {{lastname}}</em>
+  </div>
+
+  <div>
+    <address> {{address}} </address>
+  </div>
+</footer>

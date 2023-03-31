@@ -1,21 +1,76 @@
-{{!
-Це код container файлу для index сторінки,
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
-}}
-<div class='p-5'>
-  <h1>USB хаб Type C 12 в 1 HDMI VGA AUX 3.5 mm</h1>
+<main>
+  {{> my-header}}
 
-  <button
-    type='button'
-    class='btn btn-primary'
-  >Купити</button>
+  <div class="container">
+
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+
+      <div class="card shadow mb-5">
+        <div class="card-body text-center">
+          <h2 class="display-4 font-monospace my-4">Resume</h2>
+          <div class="btn-group" role="group">
+            <a href="/summary" class="btn btn-primary">Summary</a>
+            <a href="/skills" class="btn btn-primary">Skills</a>
+            <a href="/education" class="btn btn-primary">Education</a>
+            <a href="/work" class="btn btn-primary">Work</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card shadow mb-5">
+        <div class="card-body text-center">
+          <h2 class="display-4 font-monospace my-4">Shop</h2>
+          <div class="btn-group-vertical" role="group">
+            <a href="/shophome" class="btn btn-secondary">Home</a>
+            <a href="/shopprofile" class="btn btn-secondary">Profile</a>
+            <a href="/shopcatalog" class="btn btn-secondary">Catalogue</a>
+            <a href="/shopproduct" class="btn btn-secondary">Product Page</a>
+            <a href="/shopreview" class="btn btn-secondary">Shop Review</a>
+            <a href="/shopnews" class="btn btn-secondary">Shop News</a>
+            <a href="/shopcart" class="btn btn-secondary">Cart</a>
+            <a href="/shoporder" class="btn btn-secondary">Order Page</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card shadow mb-5">
+        <div class="card-body text-center">
+          <h2 class="display-4 font-monospace my-4">Documentation</h2>
+          <div class="btn-group" role="group">
+            <a href="/web" class="btn btn-info">Web</a>
+            <a href="/js" class="btn btn-info">JavaScript</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card shadow mb-5">
+        <div class="card-body text-center">
+          <h2 class="display-4 font-monospace my-4">Tribute pages</h2>
+          <div class="btn-group" role="group">
+            <a href="/person" class="btn btn-secondary">Person</a>
+            <a href="/bio" class="btn btn-secondary">Bio</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card shadow mb-5">
+        <div class="card-body text-center">
+          <h2 class="display-4 font-monospace my-4">Random pages</h2>
+          <div class="btn-group" role="group">
+            <a href="/car" class="btn btn-primary">Car</a>
+            <a href="/program" class="btn btn-primary">Tour Program</a>
+            <a href="/mac" class="btn btn-primary">MacBook</a>
+            <a href="/task21" class="btn btn-primary">HTML</a>
+            <a href="/task22" class="btn btn-primary">InnovaMind</a>
+            <a href="/task31" class="btn btn-primary">WebPageInterface</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>
-
-<hr />
-
-{{!
-Цей код містить лише те, що буде виводитись в
-
-<body>
-    Адже наш layout/default.hbs має вже структуру HTML
-    }}
+  
+</main>

@@ -1,88 +1,104 @@
 <html>
   <body>
-    <h1>{{name}}</h1>
-    <p><strong>Birthdate:</strong> {{birthdate}}</p>
-    <p><strong>Birthplace:</strong> {{birthplace}}</p>
-    <p><strong>Deathdate:</strong> {{deathdate}}</p>
-    <p><strong>Deathplace:</strong> {{deathplace}}</p>
-    <p><strong>Nationality:</strong> {{nationality}}</p>
-    <p><strong>Occupation:</strong> {{occupation}}</p>
+    <div class='container'>
+      <h1 class='display-4'>{{name}}</h1>
+      <p class='lead'><strong>Birthdate:</strong>
+        {{birthdate}}</p>
+      <p class='lead'><strong>Birthplace:</strong>
+        {{birthplace}}</p>
+      <p class='lead'><strong>Deathdate:</strong>
+        {{deathdate}}</p>
+      <p class='lead'><strong>Deathplace:</strong>
+        {{deathplace}}</p>
+      <p class='lead'><strong>Nationality:</strong>
+        {{nationality}}</p>
+      <p class='lead'><strong>Occupation:</strong>
+        {{occupation}}</p>
 
-    <h2>Known for:</h2>
-    <ul>
-      {{#each known_for}}
-        <li>{{this}}</li>
-      {{/each}}
-    </ul>
+      <h2 class='mt-5'>Known for:</h2>
+      <ul class='list-group'>
+        {{#each known_for}}
+          <li class='list-group-item'>{{this}}</li>
+        {{/each}}
+      </ul>
 
-    <h2>Education:</h2>
-    <ul>
-      {{#each education}}
-        <li>
-          {{degree}}
-          in
-          {{field}}
-          from
-          {{institution}}
-          ({{year}})
-        </li>
-      {{/each}}
-    </ul>
+      <h2 class='mt-5'>Education:</h2>
+      <ul class='list-group'>
+        {{#each education}}
+          <li class='list-group-item'>
+            {{degree}}
+            in
+            {{field}}
+            from
+            {{institution}}
+            ({{year}})
+          </li>
+        {{/each}}
+      </ul>
 
-    <h2>Notable Publications:</h2>
-    <ul>
-      {{#each notable_publications}}
-        <li>{{title}} ({{year}}) - {{publisher}}</li>
-      {{/each}}
-    </ul>
+      <h2 class='mt-5'>Notable Publications:</h2>
+      <ul class='list-group'>
+        {{#each notable_publications}}
+          <li class='list-group-item'>{{title}}
+            ({{year}}) -
+            {{publisher}}</li>
+        {{/each}}
+      </ul>
 
-    <h2>Partners:</h2>
-    <ul>
-      {{#each partners}}
-        <li>{{name}} ({{relationship}}, {{years}})</li>
-      {{/each}}
-    </ul>
+      <h2 class='mt-5'>Partners:</h2>
+      <ul class='list-group'>
+        {{#each partners}}
+          <li class='list-group-item'>{{name}}
+            ({{relationship}},
+            {{years}})</li>
+        {{/each}}
+      </ul>
 
-    <h2>Awards:</h2>
-    <ul>
-      {{#each awards}}
-        <li>{{title}} ({{year}}) - {{description}}</li>
-      {{/each}}
-    </ul>
+      <h2 class='mt-5'>Awards:</h2>
+      <ul class='list-group'>
+        {{#each awards}}
+          <li class='list-group-item'>{{title}}
+            ({{year}}) -
+            {{description}}</li>
+        {{/each}}
+      </ul>
 
-    <h2>Influences:</h2>
-    <ul>
-      {{#each influences}}
-        <li>{{this}}</li>
-      {{/each}}
-    </ul>
+      <h2 class='mt-5'>Influences:</h2>
+      <ul class='list-group'>
+        {{#each influences}}
+          <li class='list-group-item'>{{this}}</li>
+        {{/each}}
+      </ul>
 
-    <h2>Influenced:</h2>
-    <ul>
-      {{#each influenced}}
-        <li>{{this}}</li>
-      {{/each}}
-    </ul>
+      <h2 class='mt-5'>Influenced:</h2>
+      <ul class='list-group'>
+        {{#each influenced}}
+          <li class='list-group-item'>{{this}}</li>
+        {{/each}}
+      </ul>
 
-    <h2>Quotes:</h2>
-    <ul>
-      {{#each quotes}}
-        <li>{{this}}</li>
-      {{/each}}
-    </ul>
+      <h2 class='mt-5'>Quotes:</h2>
+      <ul class='list-group'>
+        {{#each quotes}}
+          <li class='list-group-item'>{{this}}</li>
+        {{/each}}
+      </ul>
 
-    <h2>Major Discoveries:</h2>
-    <ul>
-      {{#each major_discoveries}}
-        <li>{{title}} ({{year}}) - {{description}}</li>
-      {{/each}}
-    </ul>
+      <h2 class='mt-5'>Major Discoveries:</h2>
+      <ul class='list-group'>
+        {{#each major_discoveries}}
+          <li class='list-group-item'>{{title}}
+            ({{year}}) -
+            {{description}}</li>
+        {{/each}}
+      </ul>
 
-    <h2>Contributions:</h2>
-    <p>
-      {{contributions.description}}
-      ({{contributions.year}}) in the field of
-      {{contributions.field}}
-    </p>
+      <h2 class='mt-5'>Contributions:</h2>
+      <p>
+        {{contributions.description}}
+        ({{contributions.year}}) in the field of
+        {{contributions.field}}
+      </p>
+    </div>
   </body>
 </html>
